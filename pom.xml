@@ -11,12 +11,12 @@
     <groupId>dev.graphql</groupId>
     <artifactId>accounts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-books</name>
+    <name>accounts</name>
     <description>accounts-graphql</description>
     <properties>
         <java.version>18</java.version>
-        <node.version>v16.14.2</node.version>
-        <npm.version>8.6.0</npm.version>
+        <!--<node.version>v16.14.2</node.version>
+        <npm.version>8.6.0</npm.version>-->
     </properties>
     <dependencies>
         <dependency>
@@ -42,14 +42,25 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
     </dependencies>
-
+   <!-- <build>
+        <plugins>
+             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>-->
 <!--    <build>
         <plugins>
             <plugin>
@@ -102,6 +113,7 @@
 
             </plugin>
 
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -124,6 +136,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
     <repositories>
@@ -145,6 +158,6 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-    </pluginRepositories>-->
-
+    </pluginRepositories>
+-->
 </project>
