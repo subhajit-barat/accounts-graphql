@@ -2,6 +2,7 @@ package dev.graphql.accounts.repository;
 
 import dev.graphql.accounts.model.Transactions;
 import org.springframework.stereotype.Repository;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -21,7 +22,9 @@ public class TransactionRepository {
     public List<Transactions> findByAccountNumber(String accountNumber) {
         return (List<Transactions>) transactionList.stream()
                 .filter(transactions -> transactions.getAccountNumber().equals(accountNumber))
-                .toList();
+                .collect(Collectors.toList());
+                //.toList(); //available only java 16+
+
              //   .orElseThrow(() -> new RuntimeException("Transactions not found"));
     }
 
