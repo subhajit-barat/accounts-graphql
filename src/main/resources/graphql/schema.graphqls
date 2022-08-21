@@ -1,0 +1,43 @@
+type Account {
+    accountNumber: Int
+    iban: String
+    swiftCode: String
+    bankName: String
+    openingDate: String
+    closingDate: String
+    interestRate: Float
+    accountStatus: String
+    currency: String
+    productCode: String
+    balances: Balances
+    transactions: Transactions
+}
+
+type Balances {
+    balances: Balances
+    outstandingBalance: Float
+    currentBalance: Float
+    holdAmount: Float
+    closingBalance: Float
+    closingBalanceDate: String
+}
+
+type Transactions {
+    transactions: Transactions
+    accountNumber: Int
+    previousBalance: Float
+    transactionId: String
+    transactionAmount: Float
+    transactionType: String
+    transactionCode: String
+    transactionDescription: String
+    transactionDate: String
+    transactionCurrency: String
+}
+
+type Query {
+    allAccounts: [Account]
+    findOne(accountNumber: ID!): Account
+    allTransactions: [Transactions]
+
+}
