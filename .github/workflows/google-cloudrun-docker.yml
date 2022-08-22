@@ -133,6 +133,8 @@ jobs:
         run: |-
           gcloud auth configure-docker asia-south2-docker.pkg.dev 
           
+          echo /home/runner/.docker/config.json
+          
       - name: Build and Push Container
         run: |-
           #docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}" ./
