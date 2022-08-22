@@ -77,7 +77,7 @@
                <version>2.3.1</version>
                <configuration>
                  <outputDirectory>./app</outputDirectory>
-                  <finalName>app.jar</finalName>                   
+                  <finalName>app</finalName>                   
                </configuration>
              </plugin>
                  
