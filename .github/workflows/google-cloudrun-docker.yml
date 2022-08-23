@@ -131,6 +131,8 @@ jobs:
 
       - name:  gCloud configure docker
         run: |-
+          echo "Access Token " 
+          echo ${{ steps.auth.outputs.access_token }}
           gcloud auth configure-docker asia-south2-docker.pkg.dev 
           
           cat /home/runner/.docker/config.json
