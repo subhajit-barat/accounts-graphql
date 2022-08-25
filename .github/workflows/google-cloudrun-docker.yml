@@ -119,6 +119,14 @@ jobs:
       #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}''
 
       # BEGIN - Docker auth and build (NOTE: If you already have a container image, these Docker steps can be omitted)
+      - name:  gCloud configure docker
+        run: |-
+          echo "Access Token " 
+          echo ${{ steps.auth.outputs.access_token }}
+          gcloud auth configure-docker asia-south2-docker.pkg.dev 
+          
+          cat /home/runner/.docker/config.json
+      
 
       # Authenticate Docker to Google Cloud Artifact Registry
       - name: Docker Auth
@@ -129,13 +137,6 @@ jobs:
           password: '${{ steps.auth.outputs.access_token }}'
           registry: '${{env.GAR_LOCATION}}'
 
-      - name:  gCloud configure docker
-        run: |-
-          echo "Access Token " 
-          echo ${{ steps.auth.outputs.access_token }}
-          gcloud auth configure-docker asia-south2-docker.pkg.dev 
-          
-          cat /home/runner/.docker/config.json
           
       - name: Build and Push Container
         run: |-
