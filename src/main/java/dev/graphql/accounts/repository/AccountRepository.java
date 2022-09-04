@@ -24,7 +24,7 @@ public class AccountRepository {
     }
 
     public Account findOne(Integer accountNumber) {
-        return accounts.stream().filter(account -> account.getAccountNumber() == accountNumber).findFirst().orElseThrow(() -> new RuntimeException("Account not found"));
+        return accounts.stream().filter(account -> account.getAccountNumber().equals(accountNumber)).findFirst().orElseThrow(() -> new RuntimeException("Account not found"));
     }
 
     Transactions transactions = new Transactions();

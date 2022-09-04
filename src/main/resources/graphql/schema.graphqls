@@ -37,7 +37,7 @@ type Transactions {
 
 type Query {
     allAccounts: [Account]
-    findOne(accountNumber: ID!): Account
+    findOne(accountNumber: Int): Account
     allTransactions: [Transactions]
 
 }

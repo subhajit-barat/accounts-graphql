@@ -24,7 +24,7 @@ public class AccountController {
     }
 
     @QueryMapping
-    public Account findOne(@Argument Integer id) {
-        return accountRepository.findOne(id);
+    public Account findOne(@Argument Integer accountNumber) {
+        return accountRepository.findOne(accountNumber);
     }
 }
